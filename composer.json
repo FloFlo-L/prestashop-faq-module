@@ -1,0 +1,20 @@
+{
+  "name": "faq/module-prestashop",
+  "authors": [
+    {
+      "name": "Florian Lescribaa"
+    }
+  ],
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Module\\Faq\\": "src/"
+    },
+    "config": {
+      "prepend-autoloader": false
+    },
+    "type": "prestashop-module"
+  }
+}
