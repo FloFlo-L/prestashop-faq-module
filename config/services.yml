@@ -2,8 +2,18 @@ imports:
   - { resource: ./common.yml }
 
 services:
-  # Controller
+  # Controllers
   Module\Faq\Controller\Admin\FaqConfigurationController:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Module\Faq\Controller\Admin\FaqCategoryController:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Module\Faq\Controller\Admin\FaqQuestionController:
     autowire: true
     autoconfigure: true
     public: true

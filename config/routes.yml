@@ -3,6 +3,21 @@ faq_configuration:
   methods: [GET, POST]
   defaults:
     _controller: 'Module\Faq\Controller\Admin\FaqConfigurationController::index'
-    # Needed to work with tab system
     _legacy_controller: AdminFaqConfiguration
     _legacy_link: AdminFaqConfiguration
+
+faq_category_index:
+  path: /faq/category
+  methods: [GET]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::index'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
+faq_question_index:
+  path: /faq/question
+  methods: [GET]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::index'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion

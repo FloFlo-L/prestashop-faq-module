@@ -14,8 +14,13 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
 
 class Faq extends Module
 {
-    /** @var array List of hooks used by the module*/
-    private $hooks = [];
+    /** @var string[] All tab class names used by this module */
+    private $tabClassNames = [
+        'AdminFaqConfiguration',
+        'AdminFaqConfiguration_MTR',
+        'AdminFaqCategory',
+        'AdminFaqQuestion',
+    ];
 
     public function __construct()
     {
@@ -27,32 +32,87 @@ class Faq extends Module
 
         parent::__construct();
 
-        $this->displayName = $this->l('FAQ');
-        $this->description = $this->l('Create a professional FAQ page for your PrestaShop store.');
+        $this->displayName = $this->trans('FAQ', [], 'Modules.Faq.Admin');
+        $this->description = $this->trans('Create a professional FAQ page for your PrestaShop store.', [], 'Modules.Faq.Admin');
+
+        // Tabs are registered manually in installTabs() to avoid the _MTR duplication mechanism
+        $this->tabs = [];
     }
 
-    /**
-     * Install the module, add tables and register hooks
-     */
     public function install()
     {
-        return 
-            $this->installTables() && 
+        return
+            $this->removeStaleTabs() &&
+            $this->installTables() &&
             parent::install() &&
-            $this->registerHook($this->hooks)
+            $this->installTabs()
         ;
     }
 
-    /**
-     * Uninstall the module, remove tables and unregister hooks
-     */
     public function uninstall()
     {
-        return 
-            $this->removeTables() && 
-            parent::uninstall() && 
-            $this->unregisterHook($this->hooks)
+        return
+            $this->removeStaleTabs() &&
+            $this->removeTables() &&
+            parent::uninstall()
         ;
+    }
+
+    private function installTabs(): bool
+    {
+        $idImprove = (int) Tab::getIdFromClassName('IMPROVE');
+        $languages = Language::getLanguages();
+
+        // Parent tab (group header — like native PS tabs e.g. AdminParentThemes)
+        $parent = new Tab();
+        $parent->class_name = 'AdminFaqConfiguration';
+        $parent->id_parent = $idImprove;
+        $parent->active = 1;
+        $parent->icon = 'school';
+        foreach ($languages as $lang) {
+            $parent->name[$lang['id_lang']] = 'FAQ';
+        }
+        if (!$parent->save()) {
+            return false;
+        }
+
+        // Categories tab
+        $categoryTab = new Tab();
+        $categoryTab->class_name = 'AdminFaqCategory';
+        $categoryTab->route_name = 'faq_category_index';
+        $categoryTab->id_parent = $parent->id;
+        $categoryTab->active = 1;
+        foreach ($languages as $lang) {
+            $categoryTab->name[$lang['id_lang']] = $this->trans('Categories', [], 'Modules.Faq.Admin', $lang['locale']);
+        }
+        if (!$categoryTab->save()) {
+            return false;
+        }
+
+        // Questions / Answers tab
+        $questionTab = new Tab();
+        $questionTab->class_name = 'AdminFaqQuestion';
+        $questionTab->route_name = 'faq_question_index';
+        $questionTab->id_parent = $parent->id;
+        $questionTab->active = 1;
+        foreach ($languages as $lang) {
+            $questionTab->name[$lang['id_lang']] = $this->trans('Questions / Answers', [], 'Modules.Faq.Admin', $lang['locale']);
+        }
+
+        return $questionTab->save();
+    }
+
+    private function removeStaleTabs(): bool
+    {
+        foreach ($this->tabClassNames as $className) {
+            $id = Tab::getIdFromClassName($className);
+            if ($id) {
+                $tab = new Tab($id);
+                $tab->delete();
+            }
+        }
+
+        return true;
     }
 
     public function getContent(): void
@@ -84,11 +144,9 @@ class Faq extends Module
         try {
             $installer = $this->get(FaqInstaller::class);
         } catch (Exception) {
-            // Catch exception in case container is not available, or service is not available
             $installer = null;
         }
 
-        // During install process the modules's service is not available yet, so we build it manually
         if (!$installer) {
             $installer = new FaqInstaller(
                 $this->get('doctrine.dbal.default_connection'),
