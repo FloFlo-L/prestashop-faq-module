@@ -2,3 +2,38 @@ imports:
   - { resource: ./common.yml }
 
 services:
+  # Controller
+  Module\Faq\Controller\Admin\FaqConfigurationController:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  # Form type (multilingual)
+  module.faq.form.type.configuration:
+    class: 'Module\Faq\Form\Configuration\FaqConfigurationFormType'
+    parent: 'form.type.translatable.aware'
+    public: true
+    tags:
+      - { name: form.type }
+
+  # Data configuration (reads/writes PS Configuration table)
+  module.faq.form.configuration_data_configuration:
+    class: 'Module\Faq\Form\Configuration\FaqConfigurationFormDataConfiguration'
+    arguments:
+      - '@prestashop.adapter.legacy.configuration'
+
+  # Form data provider
+  module.faq.form.configuration_form_data_provider:
+    class: 'Module\Faq\Form\Configuration\FaqConfigurationFormDataProvider'
+    arguments:
+      - '@module.faq.form.configuration_data_configuration'
+
+  # Form handler
+  module.faq.form.configuration_form_data_handler:
+    class: 'PrestaShop\PrestaShop\Core\Form\Handler'
+    arguments:
+      - '@form.factory'
+      - '@prestashop.core.hook.dispatcher'
+      - '@module.faq.form.configuration_form_data_provider'
+      - 'Module\Faq\Form\Configuration\FaqConfigurationFormType'
+      - 'FaqConfiguration'

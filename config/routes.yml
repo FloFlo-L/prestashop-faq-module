@@ -1,0 +1,8 @@
+faq_configuration:
+  path: /faq/configuration
+  methods: [GET, POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqConfigurationController::index'
+    # Needed to work with tab system
+    _legacy_controller: AdminFaqConfiguration
+    _legacy_link: AdminFaqConfiguration

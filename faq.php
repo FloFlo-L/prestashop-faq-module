@@ -55,6 +55,12 @@ class Faq extends Module
         ;
     }
 
+    public function getContent(): void
+    {
+        $route = $this->get('router')->generate('faq_configuration');
+        Tools::redirectAdmin($route);
+    }
+
     private function installTables(): bool
     {
         /** @var FaqInstaller $installer */

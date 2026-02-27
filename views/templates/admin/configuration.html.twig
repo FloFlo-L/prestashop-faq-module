@@ -1,0 +1,31 @@
+{% extends '@PrestaShop/Admin/layout.html.twig' %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-xl-9">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-header-title">
+          {{ 'FAQ Configuration'|trans({}, 'Modules.Faq.Admin') }}
+        </h3>
+      </div>
+
+      {{ form_start(faqConfigurationForm) }}
+
+      <div class="card-body">
+        {{ form_widget(faqConfigurationForm) }}
+      </div>
+
+      <div class="card-footer">
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary">
+            {{ 'Save'|trans({}, 'Admin.Actions') }}
+          </button>
+        </div>
+      </div>
+
+      {{ form_end(faqConfigurationForm) }}
+    </div>
+  </div>
+</div>
+{% endblock %}
