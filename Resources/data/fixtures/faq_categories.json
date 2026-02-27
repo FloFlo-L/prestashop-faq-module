@@ -1,0 +1,56 @@
+[
+  {
+    "icon": "help_outline",
+    "position": 0,
+    "active": true,
+    "translations": {
+      "fr": "Informations générales",
+      "en": "General information"
+    }
+  },
+  {
+    "icon": "inventory_2",
+    "position": 1,
+    "active": true,
+    "translations": {
+      "fr": "Informations produits",
+      "en": "Product information"
+    }
+  },
+  {
+    "icon": "account_circle",
+    "position": 2,
+    "active": true,
+    "translations": {
+      "fr": "Mon compte",
+      "en": "My account"
+    }
+  },
+  {
+    "icon": "assignment_return",
+    "position": 3,
+    "active": true,
+    "translations": {
+      "fr": "Retour & remboursement",
+      "en": "Returns & refunds"
+    }
+  },
+  {
+    "icon": "local_shipping",
+    "position": 4,
+    "active": true,
+    "translations": {
+      "fr": "Livraison",
+      "en": "Shipping"
+    }
+  },
+  {
+    "icon": "shopping_cart",
+    "position": 5,
+    "active": true,
+    "translations": {
+      "fr": "Commandes et paiements",
+      "en": "Orders & payments"
+    }
+  }
+]

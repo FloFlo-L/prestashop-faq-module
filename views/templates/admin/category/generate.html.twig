@@ -1,0 +1,30 @@
+{% extends '@PrestaShop/Admin/layout.html.twig' %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-header-title">
+          {{ 'Generate demo categories'|trans({}, 'Modules.Faq.Admin') }}
+        </h3>
+      </div>
+      <div class="card-body">
+        <p>{{ 'This will delete all existing categories and replace them with demo data.'|trans({}, 'Modules.Faq.Admin') }}</p>
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-between">
+          <a href="{{ path('faq_category_index') }}" class="btn btn-secondary">
+            {{ 'Cancel'|trans({}, 'Admin.Actions') }}
+          </a>
+          <form method="POST" action="{{ path('faq_category_generate') }}">
+            <button type="submit" class="btn btn-primary">
+              {{ 'Generate'|trans({}, 'Admin.Actions') }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

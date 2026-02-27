@@ -6,6 +6,14 @@ faq_configuration:
     _legacy_controller: AdminFaqConfiguration
     _legacy_link: AdminFaqConfiguration
 
+faq_category_generate:
+  path: /faq/category/generate
+  methods: [GET, POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::generate'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
 faq_category_index:
   path: /faq/category
   methods: [GET]
@@ -13,6 +21,64 @@ faq_category_index:
     _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::index'
     _legacy_controller: AdminFaqCategory
     _legacy_link: AdminFaqCategory
+
+faq_category_create:
+  path: /faq/category/create
+  methods: [GET]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::create'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
+faq_category_create_process:
+  path: /faq/category/create
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::createProcess'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
+faq_category_edit:
+  path: /faq/category/{faqCategoryId}/edit
+  methods: [GET]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::edit'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
+faq_category_edit_process:
+  path: /faq/category/{faqCategoryId}/edit
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::editProcess'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
+faq_category_delete:
+  path: /faq/category/{faqCategoryId}/delete
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::delete'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
+faq_category_toggle_active:
+  path: /faq/category/{faqCategoryId}/toggle-active
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::toggleActive'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
+faq_category_update_position:
+  path: /faq/category/update-position
+  methods: [POST]
+  defaults:
+    _controller: 'PrestaShopBundle\Controller\Admin\CommonController::updatePositionAction'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+    position_definition: module.faq.grid.faq_category.position_definition
+    redirect_route: faq_category_index
 
 faq_question_index:
   path: /faq/question

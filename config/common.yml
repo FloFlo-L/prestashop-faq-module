@@ -4,3 +4,9 @@ services:
     arguments:
       - "@doctrine.dbal.default_connection"
       - "%database_prefix%"
+
+  Module\Faq\Repository\FaqCategoryRepository:
+    public: true
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments:
+      - Module\Faq\Entity\FaqCategory

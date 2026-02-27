@@ -1,0 +1,37 @@
+{% extends '@PrestaShop/Admin/layout.html.twig' %}
+
+{% block content %}
+{{ form_start(faqCategoryForm, {action: formAction}) }}
+<div class="row justify-content-center">
+  <div class="col-xl-8">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-header-title">
+          {{ layoutTitle }}
+        </h3>
+      </div>
+      <div class="card-body">
+        {{ form_row(faqCategoryForm.name) }}
+        {{ form_row(faqCategoryForm.icon) }}
+        {{ form_row(faqCategoryForm.active) }}
+      </div>
+      <div class="card-footer">
+        <div class="d-flex justify-content-between">
+          <a href="{{ path('faq_category_index') }}" class="btn btn-secondary">
+            {{ 'Cancel'|trans({}, 'Admin.Actions') }}
+          </a>
+          <button type="submit" class="btn btn-primary">
+            {{ 'Save'|trans({}, 'Admin.Actions') }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ form_end(faqCategoryForm) }}
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script src="{{ asset('../modules/faq/views/js/admin/faq_category_form.js') }}"></script>
+{% endblock %}
