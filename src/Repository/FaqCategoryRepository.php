@@ -40,8 +40,18 @@ class FaqCategoryRepository extends EntityRepository
         try {
             $this->getEntityManager()->remove($entity);
             $this->getEntityManager()->flush();
+            $this->reorderPositions();
         } catch (\Exception $e) {
             throw new DatabaseException(sprintf('Could not delete FaqCategory #%d: %s', $id, $e->getMessage()));
         }
+    }
+
+    private function reorderPositions(): void
+    {
+        $categories = $this->findBy([], ['position' => 'ASC']);
+        foreach ($categories as $index => $category) {
+            $category->setPosition($index);
+        }
+        $this->getEntityManager()->flush();
     }
 }

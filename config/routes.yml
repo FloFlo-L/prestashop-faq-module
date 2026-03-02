@@ -6,11 +6,11 @@ faq_configuration:
     _legacy_controller: AdminFaqConfiguration
     _legacy_link: AdminFaqConfiguration
 
-faq_category_generate:
-  path: /faq/category/generate
+faq_generate:
+  path: /faq/generate
   methods: [GET, POST]
   defaults:
-    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::generate'
+    _controller: 'Module\Faq\Controller\Admin\FaqGenerateController::generate'
     _legacy_controller: AdminFaqCategory
     _legacy_link: AdminFaqCategory
 
@@ -109,5 +109,95 @@ faq_question_index:
   methods: [GET]
   defaults:
     _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::index'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_search:
+  path: /faq/question
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::search'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_delete:
+  path: /faq/question/{faqId}/delete
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::delete'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_toggle_active:
+  path: /faq/question/{faqId}/toggle-active
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::toggleActive'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_enable_bulk:
+  path: /faq/question/enable-bulk
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::enableBulk'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_disable_bulk:
+  path: /faq/question/disable-bulk
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::disableBulk'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_delete_bulk:
+  path: /faq/question/delete-bulk
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::deleteBulk'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_update_position:
+  path: /faq/question/update-position
+  methods: [POST]
+  defaults:
+    _controller: 'PrestaShopBundle\Controller\Admin\CommonController::updatePositionAction'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+    position_definition: module.faq.grid.faq.position_definition
+    redirect_route: faq_question_index
+
+faq_question_create:
+  path: /faq/question/create
+  methods: [GET]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::create'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_create_process:
+  path: /faq/question/create
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::createProcess'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_edit:
+  path: /faq/question/{faqId}/edit
+  methods: [GET]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::edit'
+    _legacy_controller: AdminFaqQuestion
+    _legacy_link: AdminFaqQuestion
+
+faq_question_edit_process:
+  path: /faq/question/{faqId}/edit
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqQuestionController::editProcess'
     _legacy_controller: AdminFaqQuestion
     _legacy_link: AdminFaqQuestion

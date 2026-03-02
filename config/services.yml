@@ -3,6 +3,11 @@ imports:
 
 services:
   # Controllers
+  Module\Faq\Controller\Admin\FaqGenerateController:
+    autowire: true
+    autoconfigure: true
+    public: true
+
   Module\Faq\Controller\Admin\FaqConfigurationController:
     autowire: true
     autoconfigure: true
@@ -17,8 +22,13 @@ services:
       $formDataProvider: '@module.faq.form.faq_category_data_provider'
       $faqCategoryRepository: '@Module\Faq\Repository\FaqCategoryRepository'
 
-  # FAQ Category generator
+  # FAQ generators
   Module\Faq\Database\FaqCategoryGenerator:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Module\Faq\Database\FaqGenerator:
     autowire: true
     autoconfigure: true
     public: true
@@ -67,6 +77,78 @@ services:
     autowire: true
     autoconfigure: true
     public: true
+    arguments:
+      $faqGridFactory: '@module.faq.grid.factory.faq'
+      $faqGridDefinitionFactory: '@module.faq.grid.definition.factory.faq'
+      $faqRepository: '@Module\Faq\Repository\FaqRepository'
+      $formDataProvider: '@module.faq.form.faq_data_provider'
+
+  # FAQ Question form
+  module.faq.form.choice_provider.faq_category:
+    class: 'Module\Faq\Form\ChoiceProvider\FaqCategoryChoiceProvider'
+    public: true
+    arguments:
+      $connection: '@doctrine.dbal.default_connection'
+      $dbPrefix: '%database_prefix%'
+      $idLang: '@=service("prestashop.adapter.legacy.context").getContext().language.id'
+
+  module.faq.form.type.faq:
+    class: 'Module\Faq\Form\FaqFormType'
+    parent: 'form.type.translatable.aware'
+    public: true
+    calls:
+      - [setCategoryChoiceProvider, ['@module.faq.form.choice_provider.faq_category']]
+    tags:
+      - { name: form.type }
+
+  module.faq.form.faq_data_provider:
+    class: 'Module\Faq\Form\FaqFormDataProvider'
+    public: true
+    arguments:
+      $connection: '@doctrine.dbal.default_connection'
+      $dbPrefix: '%database_prefix%'
+
+  # FAQ Question grid
+  module.faq.grid.faq.position_definition:
+    class: 'PrestaShop\PrestaShop\Core\Grid\Position\PositionDefinition'
+    arguments:
+      $table: 'faq'
+      $idField: 'id_faq'
+      $positionField: 'position'
+    tags:
+      - { name: core.grid_position_definition }
+
+  module.faq.grid.definition.factory.faq:
+    class: 'Module\Faq\Grid\Definition\Factory\FaqGridDefinitionFactory'
+    parent: 'prestashop.core.grid.definition.factory.abstract_grid_definition'
+    public: true
+    arguments:
+      $categoryChoiceProvider: '@module.faq.form.choice_provider.faq_category'
+
+  module.faq.grid.query_builder.faq:
+    class: 'Module\Faq\Grid\Query\FaqQueryBuilder'
+    public: true
+    arguments:
+      $connection: '@doctrine.dbal.default_connection'
+      $dbPrefix: '%database_prefix%'
+      $idLang: '@=service("prestashop.adapter.legacy.context").getContext().language.id'
+
+  module.faq.grid.data_factory.faq:
+    class: '%prestashop.core.grid.data.factory.doctrine_grid_data_factory%'
+    arguments:
+      $gridQueryBuilder: '@module.faq.grid.query_builder.faq'
+      $hookDispatcher: '@prestashop.core.hook.dispatcher'
+      $queryParser: '@prestashop.core.grid.query.doctrine_query_parser'
+      $gridId: 'faq'
+
+  module.faq.grid.factory.faq:
+    class: 'PrestaShop\PrestaShop\Core\Grid\GridFactory'
+    public: true
+    arguments:
+      - '@module.faq.grid.definition.factory.faq'
+      - '@module.faq.grid.data_factory.faq'
+      - '@prestashop.core.grid.filter.form_factory'
+      - '@prestashop.core.hook.dispatcher'
 
   # FAQ Category form
   module.faq.form.type.faq_category:

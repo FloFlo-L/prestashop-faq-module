@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Module\Faq\Controller\Admin;
 
-use Module\Faq\Database\FaqCategoryGenerator;
 use Module\Faq\Form\FaqCategoryFormDataProvider;
 use Module\Faq\Form\FaqCategoryFormType;
 use Module\Faq\Grid\Filters\FaqCategoryFilters;
@@ -149,29 +148,6 @@ class FaqCategoryController extends PrestaShopAdminController
     }
 
     /**
-     * This method displays the demo data generation page and processes the generation on POST.
-     *
-     * @param Request $request
-     * @param FaqCategoryGenerator $generator
-     *
-     * @return RedirectResponse|Response
-     */
-    public function generate(Request $request, FaqCategoryGenerator $generator): Response
-    {
-        if ($request->isMethod(Request::METHOD_POST)) {
-            $generator->generateCategories();
-            $this->addFlash('success', $this->trans('Categories were successfully generated.', [], 'Modules.Faq.Admin'));
-
-            return $this->redirectToRoute('faq_category_index');
-        }
-
-        return $this->render('@Modules/faq/views/templates/admin/category/generate.html.twig', [
-            'layoutTitle' => $this->trans('Generate demo categories', [], 'Modules.Faq.Admin'),
-            'layoutHeaderToolbarBtn' => $this->getToolbarButtons(),
-        ]);
-    }
-
-    /**
      * This method deletes a single FAQ category from the grid.
      *
      * @param int $faqCategoryId
@@ -309,7 +285,7 @@ class FaqCategoryController extends PrestaShopAdminController
                 'icon' => 'add_circle_outline',
             ],
             'generate' => [
-                'href' => $this->generateUrl('faq_category_generate'),
+                'href' => $this->generateUrl('faq_generate', ['redirect' => 'faq_category_index']),
                 'desc' => $this->trans('Generate demo data', [], 'Modules.Faq.Admin'),
                 'icon' => 'auto_fix_high',
                 'class' => 'btn-outline-secondary',
