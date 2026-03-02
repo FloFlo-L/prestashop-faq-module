@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  console.log("faq_category_grid.js loaded");
   const grid = new window.prestashop.component.Grid("faq_category");
   grid.addExtension(
     new window.prestashop.component.GridExtensions.SortingExtension(),
@@ -15,5 +14,11 @@ $(document).ready(function () {
   );
   grid.addExtension(
     new window.prestashop.component.GridExtensions.PositionExtension(),
+  );
+  grid.addExtension(
+    new window.prestashop.component.GridExtensions.BulkActionCheckboxExtension(),
+  );
+  grid.addExtension(
+    new window.prestashop.component.GridExtensions.SubmitBulkActionExtension(),
   );
 });

@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace Module\Faq\Grid\Definition\Factory;
 
+use PrestaShop\PrestaShop\Core\Grid\Action\Bulk\BulkActionCollection;
+use PrestaShop\PrestaShop\Core\Grid\Action\Bulk\Type\SubmitBulkAction;
 use PrestaShop\PrestaShop\Core\Grid\Action\Row\RowActionCollection;
 use PrestaShop\PrestaShop\Core\Grid\Action\Row\Type\LinkRowAction;
 use PrestaShop\PrestaShop\Core\Grid\Action\Row\Type\SubmitRowAction;
 use PrestaShop\PrestaShop\Core\Grid\Column\ColumnCollection;
 use PrestaShop\PrestaShop\Core\Grid\Column\Type\Common\ActionColumn;
+use PrestaShop\PrestaShop\Core\Grid\Column\Type\Common\BulkActionColumn;
 use PrestaShop\PrestaShop\Core\Grid\Column\Type\Common\PositionColumn;
 use PrestaShop\PrestaShop\Core\Grid\Column\Type\Common\ToggleColumn;
 use PrestaShop\PrestaShop\Core\Grid\Column\Type\DataColumn;
@@ -26,9 +29,49 @@ class FaqCategoryGridDefinitionFactory extends AbstractGridDefinitionFactory
         return $this->trans('FAQ Categories', [], 'Modules.Faq.Admin');
     }
 
+    protected function getBulkActions(): BulkActionCollection
+    {
+        return (new BulkActionCollection())
+            ->add(
+                (new SubmitBulkAction('enable_selection'))
+                    ->setName($this->trans('Enable selection', [], 'Admin.Actions'))
+                    ->setIcon('check_circle')
+                    ->setOptions([
+                        'submit_route' => 'faq_category_enable_bulk',
+                    ])
+            )
+            ->add(
+                (new SubmitBulkAction('disable_selection'))
+                    ->setName($this->trans('Disable selection', [], 'Admin.Actions'))
+                    ->setIcon('cancel')
+                    ->setOptions([
+                        'submit_route' => 'faq_category_disable_bulk',
+                    ])
+            )
+            ->add(
+                (new SubmitBulkAction('delete_selection'))
+                    ->setName($this->trans('Delete selected', [], 'Admin.Actions'))
+                    ->setIcon('delete')
+                    ->setOptions([
+                        'submit_route' => 'faq_category_delete_bulk',
+                        'confirm_message' => $this->trans(
+                            'Delete selected items?',
+                            [],
+                            'Admin.Notifications.Warning'
+                        ),
+                    ])
+            );
+    }
+
     protected function getColumns(): ColumnCollection
     {
         return (new ColumnCollection())
+            ->add(
+                (new BulkActionColumn('bulk'))
+                    ->setOptions([
+                        'bulk_field' => 'id_faq_category',
+                    ])
+            )
             ->add(
                 (new DataColumn('id_faq_category'))
                     ->setName($this->trans('ID', [], 'Admin.Global'))

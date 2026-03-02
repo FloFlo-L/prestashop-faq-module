@@ -62,6 +62,30 @@ faq_category_delete:
     _legacy_controller: AdminFaqCategory
     _legacy_link: AdminFaqCategory
 
+faq_category_enable_bulk:
+  path: /faq/category/enable-bulk
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::enableBulk'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
+faq_category_disable_bulk:
+  path: /faq/category/disable-bulk
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::disableBulk'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
+faq_category_delete_bulk:
+  path: /faq/category/delete-bulk
+  methods: [POST]
+  defaults:
+    _controller: 'Module\Faq\Controller\Admin\FaqCategoryController::deleteBulk'
+    _legacy_controller: AdminFaqCategory
+    _legacy_link: AdminFaqCategory
+
 faq_category_toggle_active:
   path: /faq/category/{faqCategoryId}/toggle-active
   methods: [POST]

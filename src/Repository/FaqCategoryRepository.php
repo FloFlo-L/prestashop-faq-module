@@ -9,6 +9,23 @@ use PrestaShop\PrestaShop\Core\Exception\DatabaseException;
 
 class FaqCategoryRepository extends EntityRepository
 {
+    public function setActive(int $id, bool $active): void
+    {
+        $entity = $this->find($id);
+
+        if ($entity === null) {
+            return;
+        }
+
+        $entity->setActive($active);
+
+        try {
+            $this->getEntityManager()->flush();
+        } catch (\Exception $e) {
+            throw new DatabaseException(sprintf('Could not update FaqCategory #%d: %s', $id, $e->getMessage()));
+        }
+    }
+
     /**
      * @throws DatabaseException
      */
