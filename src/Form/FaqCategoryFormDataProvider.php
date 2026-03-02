@@ -91,7 +91,7 @@ class FaqCategoryFormDataProvider implements FormDataProviderInterface
 
         if ($this->id === null) {
             $maxPosition = (int) $this->connection->createQueryBuilder()
-                ->select('MAX(fc.position)')
+                ->select('COALESCE(MAX(fc.position), -1)')
                 ->from($this->dbPrefix . 'faq_category', 'fc')
                 ->executeQuery()
                 ->fetchOne();

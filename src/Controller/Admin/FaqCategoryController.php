@@ -227,7 +227,7 @@ class FaqCategoryController extends PrestaShopAdminController
      */
     public function deleteBulk(Request $request): RedirectResponse
     {
-        $ids = BulkActionsTrait::getBulkActionIds($request, 'faq_category_bulk');
+        $ids = $this->getBulkActionIds($request, 'faq_category_bulk');
         $errors = [];
 
         foreach ($ids as $id) {
@@ -281,7 +281,7 @@ class FaqCategoryController extends PrestaShopAdminController
      */
     private function toggleActiveBulk(Request $request, bool $active): RedirectResponse
     {
-        $ids = BulkActionsTrait::getBulkActionIds($request, 'faq_category_bulk');
+        $ids = $this->getBulkActionIds($request, 'faq_category_bulk');
 
         foreach ($ids as $id) {
             $this->faqCategoryRepository->setActive($id, $active);
