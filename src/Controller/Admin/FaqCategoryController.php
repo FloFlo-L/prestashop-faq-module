@@ -8,6 +8,8 @@ use Module\Faq\Database\FaqCategoryGenerator;
 use Module\Faq\Form\FaqCategoryFormDataProvider;
 use Module\Faq\Form\FaqCategoryFormType;
 use Module\Faq\Grid\Filters\FaqCategoryFilters;
+use Module\Faq\Repository\FaqCategoryRepository;
+use PrestaShop\PrestaShop\Core\Exception\DatabaseException;
 use PrestaShop\PrestaShop\Core\Grid\GridFactoryInterface;
 use PrestaShopBundle\Controller\Admin\PrestaShopAdminController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -20,6 +22,7 @@ class FaqCategoryController extends PrestaShopAdminController
     public function __construct(
         private readonly GridFactoryInterface $faqCategoryGridFactory,
         private readonly FaqCategoryFormDataProvider $formDataProvider,
+        private readonly FaqCategoryRepository $faqCategoryRepository,
     ) {
     }
 
@@ -41,7 +44,7 @@ class FaqCategoryController extends PrestaShopAdminController
             'faqCategoryForm' => $form->createView(),
             'formAction' => $this->generateUrl('faq_category_create_process'),
             'layoutTitle' => $this->trans('Add new category', [], 'Modules.Faq.Admin'),
-            'layoutHeaderToolbarBtn' => $this->getToolbarButtons(),
+            'layoutHeaderToolbarBtn' => $this->getFormToolbarButtons(),
         ]);
     }
 
@@ -68,7 +71,7 @@ class FaqCategoryController extends PrestaShopAdminController
             'faqCategoryForm' => $form->createView(),
             'formAction' => $this->generateUrl('faq_category_create_process'),
             'layoutTitle' => $this->trans('Add new category', [], 'Modules.Faq.Admin'),
-            'layoutHeaderToolbarBtn' => $this->getToolbarButtons(),
+            'layoutHeaderToolbarBtn' => $this->getFormToolbarButtons(),
         ]);
     }
 
@@ -81,7 +84,7 @@ class FaqCategoryController extends PrestaShopAdminController
             'faqCategoryForm' => $form->createView(),
             'formAction' => $this->generateUrl('faq_category_edit_process', ['faqCategoryId' => $faqCategoryId]),
             'layoutTitle' => $this->trans('Edit category', [], 'Modules.Faq.Admin'),
-            'layoutHeaderToolbarBtn' => $this->getToolbarButtons(),
+            'layoutHeaderToolbarBtn' => $this->getFormToolbarButtons(),
         ]);
     }
 
@@ -109,7 +112,7 @@ class FaqCategoryController extends PrestaShopAdminController
             'faqCategoryForm' => $form->createView(),
             'formAction' => $this->generateUrl('faq_category_edit_process', ['faqCategoryId' => $faqCategoryId]),
             'layoutTitle' => $this->trans('Edit category', [], 'Modules.Faq.Admin'),
-            'layoutHeaderToolbarBtn' => $this->getToolbarButtons(),
+            'layoutHeaderToolbarBtn' => $this->getFormToolbarButtons(),
         ]);
     }
 
@@ -130,7 +133,16 @@ class FaqCategoryController extends PrestaShopAdminController
 
     public function delete(int $faqCategoryId): RedirectResponse
     {
-        $this->addFlash('success', $this->trans('Category deleted successfully.', [], 'Modules.Faq.Admin'));
+        try {
+            $this->faqCategoryRepository->delete($faqCategoryId);
+            $this->addFlash('success', $this->trans('Category deleted successfully.', [], 'Modules.Faq.Admin'));
+        } catch (DatabaseException $e) {
+            $this->addFlashErrors([[
+                'key' => 'Could not delete #%id%',
+                'domain' => 'Admin.Notifications.Error',
+                'parameters' => ['%id%' => $faqCategoryId],
+            ]]);
+        }
 
         return $this->redirectToRoute('faq_category_index');
     }
@@ -157,6 +169,18 @@ class FaqCategoryController extends PrestaShopAdminController
                 'href' => $this->generateUrl('faq_category_generate'),
                 'desc' => $this->trans('Generate demo data', [], 'Modules.Faq.Admin'),
                 'icon' => 'auto_fix_high',
+                'class' => 'btn-outline-secondary',
+            ],
+        ];
+    }
+
+    private function getFormToolbarButtons(): array
+    {
+        return [
+            'list' => [
+                'href' => $this->generateUrl('faq_category_index'),
+                'desc' => $this->trans('List categories', [], 'Modules.Faq.Admin'),
+                'icon' => 'list',
                 'class' => 'btn-outline-secondary',
             ],
         ];

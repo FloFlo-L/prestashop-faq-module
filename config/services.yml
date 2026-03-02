@@ -15,6 +15,7 @@ services:
     arguments:
       $faqCategoryGridFactory: '@module.faq.grid.factory.faq_category'
       $formDataProvider: '@module.faq.form.faq_category_data_provider'
+      $faqCategoryRepository: '@Module\Faq\Repository\FaqCategoryRepository'
 
   # FAQ Category generator
   Module\Faq\Database\FaqCategoryGenerator:
