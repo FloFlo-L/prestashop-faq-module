@@ -5,12 +5,12 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "Comment puis-je contacter le service client ?",
-        "answer": "<p>Vous pouvez nous contacter par e-mail à l'adresse <strong>support@example.com</strong>, par téléphone au <strong>+33 1 23 45 67 89</strong> du lundi au vendredi de 9h à 18h, ou via le formulaire de contact disponible sur notre site.</p>"
+        "question": "Comment contacter le service client ?",
+        "answer": "<p>Notre service client est disponible via plusieurs canaux :</p><ul><li><strong>Email :</strong> support@example.com (réponse sous 48h ouvrées)</li><li><strong>Téléphone :</strong> +33 1 23 45 67 89, du lundi au vendredi de 9h à 18h</li><li><strong>Chat en ligne :</strong> disponible sur notre site pendant les heures d'ouverture</li><li><strong>Formulaire de contact :</strong> accessible depuis la rubrique \"Aide\" de notre site</li></ul>"
       },
       "en": {
-        "question": "How can I contact customer support?",
-        "answer": "<p>You can reach us by email at <strong>support@example.com</strong>, by phone at <strong>+33 1 23 45 67 89</strong> Monday to Friday from 9am to 6pm, or through the contact form on our website.</p>"
+        "question": "How do I contact customer service?",
+        "answer": "<p>Our customer service is available through several channels:</p><ul><li><strong>Email:</strong> support@example.com (response within 48 business hours)</li><li><strong>Phone:</strong> +33 1 23 45 67 89, Monday to Friday from 9am to 6pm</li><li><strong>Live chat:</strong> available on our website during opening hours</li><li><strong>Contact form:</strong> accessible from the \"Help\" section of our website</li></ul>"
       }
     }
   },
@@ -20,12 +20,12 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "Quels sont vos horaires d'ouverture ?",
-        "answer": "<p>Notre service client est disponible <strong>du lundi au vendredi de 9h à 18h</strong>. En dehors de ces horaires, vous pouvez laisser un message et nous vous répondrons dans les plus brefs délais.</p>"
+        "question": "Quels sont les jours de fermeture exceptionnels du service client ?",
+        "answer": "<p>Notre service client est fermé lors des jours fériés nationaux suivants : <strong>1er janvier, 1er mai, 14 juillet, 15 août, 1er novembre, 11 novembre et 25 décembre</strong>. En dehors de ces dates, nous sommes disponibles du lundi au vendredi de 9h à 18h.</p>"
       },
       "en": {
-        "question": "What are your opening hours?",
-        "answer": "<p>Our customer service is available <strong>Monday to Friday from 9am to 6pm</strong>. Outside these hours, you can leave a message and we will get back to you as soon as possible.</p>"
+        "question": "What are the exceptional closing days for customer service?",
+        "answer": "<p>Our customer service is closed on the following national public holidays: <strong>January 1st, May 1st, July 14th, August 15th, November 1st, November 11th and December 25th</strong>. Outside these dates, we are available Monday to Friday from 9am to 6pm.</p>"
       }
     }
   },
@@ -35,12 +35,42 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "Puis-je modifier ma commande après validation ?",
-        "answer": "<p>Une fois votre commande validée, il est possible de la modifier dans un délai de <strong>2 heures</strong>. Passé ce délai, la commande est transmise à notre entrepôt et ne peut plus être modifiée. Contactez rapidement notre service client si besoin.</p>"
+        "question": "Où puis-je trouver les boutiques les plus proches de chez moi ?",
+        "answer": "<p>Notre <strong>store locator</strong> est disponible directement sur notre site. Renseignez votre ville ou code postal pour trouver la boutique la plus proche, ses horaires d'ouverture et ses coordonnées. Vous pouvez également filtrer par type de boutique : boutique officielle, outlet ou corner.</p>"
       },
       "en": {
-        "question": "Can I modify my order after it has been placed?",
-        "answer": "<p>Once your order is confirmed, you have a <strong>2-hour window</strong> to request changes. After that, the order is sent to our warehouse and cannot be modified. Please contact our customer service as soon as possible.</p>"
+        "question": "Where can I find the nearest stores to me?",
+        "answer": "<p>Our <strong>store locator</strong> is available directly on our website. Enter your city or postcode to find the nearest store, its opening hours and contact details. You can also filter by store type: official store, outlet or corner.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 0,
+    "position": 3,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Comment trouver nos offres d'emploi ?",
+        "answer": "<p>Pour découvrir nos opportunités de carrière et rejoindre notre aventure, nous vous invitons à consulter nos offres actuelles sur notre page LinkedIn ainsi que sur notre site corporate dédié aux recrutements.</p>"
+      },
+      "en": {
+        "question": "How do I find our job offers?",
+        "answer": "<p>To discover our career opportunities and join our adventure, we invite you to check our current openings on our LinkedIn page as well as our corporate recruitment website.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 0,
+    "position": 4,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Quels sont nos engagements en matière de conditions de travail et de respect des droits de l'homme ?",
+        "answer": "<p>Nous nous engageons à respecter les normes internationales les plus strictes en matière de droits de l'homme. Tous nos fournisseurs sont tenus de respecter notre code de conduite, validé par des audits externes réguliers, garantissant des conditions de travail respectueuses tout au long de la chaîne de production.</p><p>Pour en savoir plus, nous vous invitons à consulter notre site corporate.</p>"
+      },
+      "en": {
+        "question": "What are our commitments regarding working conditions and human rights?",
+        "answer": "<p>We are committed to upholding the strictest international human rights standards. All our suppliers are required to comply with our code of conduct, validated by regular external audits, ensuring respectful working conditions throughout the production chain.</p><p>To learn more, we invite you to visit our corporate website.</p>"
       }
     }
   },
@@ -50,12 +80,12 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "Les produits sont-ils conformes aux photos ?",
-        "answer": "<p>Nous faisons tout notre possible pour que les photos soient représentatives des produits. Cependant, de légères variations de couleur peuvent exister en fonction des paramètres d'affichage de votre écran.</p>"
+        "question": "Comment choisir la bonne taille ?",
+        "answer": "<p>Chaque fiche produit comprend un <strong>guide des tailles détaillé</strong> pour vous aider à choisir la taille idéale pour vos vêtements et chaussures. En cas de doute entre deux tailles, nous vous conseillons de prendre la taille supérieure.</p><p>Si la taille souhaitée n'est pas disponible, revenez plus tard sur notre site ou rendez-vous en boutique.</p>"
       },
       "en": {
-        "question": "Are the products as shown in the photos?",
-        "answer": "<p>We do our best to ensure product photos are accurate. However, slight color variations may occur depending on your screen display settings.</p>"
+        "question": "How do I choose the right size?",
+        "answer": "<p>Each product page includes a <strong>detailed size guide</strong> to help you find the ideal size for clothing and footwear. If you are unsure between two sizes, we recommend choosing the larger one.</p><p>If your desired size is unavailable, check back later on our website or visit a store.</p>"
       }
     }
   },
@@ -65,12 +95,72 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "Comment connaître la disponibilité d'un produit ?",
-        "answer": "<p>La disponibilité de chaque produit est indiquée directement sur la fiche produit. Si un produit est en rupture de stock, vous pouvez activer une <strong>alerte de réapprovisionnement</strong> pour être notifié dès qu'il est de nouveau disponible.</p>"
+        "question": "Puis-je être notifié(e) quand un article est de nouveau disponible ?",
+        "answer": "<p>Oui ! Sur chaque fiche produit, si une taille ou couleur est en rupture de stock, vous pouvez activer une <strong>alerte de réapprovisionnement</strong> en cliquant sur \"M'avertir quand disponible\". Vous recevrez un email automatique dès que l'article sera de nouveau en stock.</p>"
       },
       "en": {
-        "question": "How do I know if a product is in stock?",
-        "answer": "<p>Stock availability is shown directly on each product page. If a product is out of stock, you can enable a <strong>restock alert</strong> to be notified as soon as it becomes available again.</p>"
+        "question": "Can I be notified when an item is back in stock?",
+        "answer": "<p>Yes! On each product page, if a size or colour is out of stock, you can enable a <strong>restock alert</strong> by clicking \"Notify me when available\". You will receive an automatic email as soon as the item is back in stock.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 1,
+    "position": 2,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Les produits vendus en ligne sont-ils identiques à ceux en boutique ?",
+        "answer": "<p>Oui, les produits disponibles sur notre site sont identiques à ceux vendus en boutique. Certaines <strong>exclusivités en ligne</strong> ou <strong>éditions limitées</strong> peuvent toutefois être disponibles uniquement sur notre site ou uniquement en boutique. Ces exceptions sont clairement indiquées sur chaque fiche produit.</p>"
+      },
+      "en": {
+        "question": "Are the products sold online identical to those in store?",
+        "answer": "<p>Yes, the products available on our website are identical to those sold in store. However, some <strong>online exclusives</strong> or <strong>limited editions</strong> may be available only on our website or only in store. These exceptions are clearly indicated on each product page.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 1,
+    "position": 3,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Comment prendre soin de mes produits pour les garder en parfait état ?",
+        "answer": "<p>Pour préserver la qualité et l'aspect de vos produits, suivez attentivement les <strong>instructions d'entretien spécifiques</strong> indiquées sur l'étiquette de chaque article et disponibles dans la rubrique \"Entretien et bonnes pratiques\" de notre site.</p>"
+      },
+      "en": {
+        "question": "How do I care for my products to keep them in perfect condition?",
+        "answer": "<p>To preserve the quality and appearance of your products, carefully follow the <strong>specific care instructions</strong> shown on each item's label and available in the \"Care & Best Practices\" section of our website.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 1,
+    "position": 4,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "D'où proviennent les matières utilisées pour fabriquer nos produits ?",
+        "answer": "<p>Nous sélectionnons avec soin les meilleures matières, en particulier pour nos polos, fabriqués à partir de coton des plus prestigieuses régions : <strong>USA, Australie, Turquie et Pérou</strong>.</p><p>Nos fournisseurs respectent des critères rigoureux en matière de qualité, de respect des droits de l'homme et de développement durable.</p>"
+      },
+      "en": {
+        "question": "Where do the materials used to make our products come from?",
+        "answer": "<p>We carefully select the finest materials, particularly for our polos, made from cotton sourced from the most prestigious regions: <strong>USA, Australia, Turkey and Peru</strong>.</p><p>Our suppliers meet rigorous standards in terms of quality, human rights and sustainable development.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 1,
+    "position": 5,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Comment protégeons-nous le bien-être des animaux et la biodiversité ?",
+        "answer": "<p>Nous sommes profondément engagés dans la protection des animaux et de la biodiversité. Nous avons interdit toute pratique nuisible aux animaux, telles que le gavage et le plumage vivant, et nous ne sélectionnons ni fourrure ni angora pour nos collections.</p><p>Depuis 2009, nous investissons dans la préservation des espèces menacées pour contribuer à la protection de la biodiversité.</p>"
+      },
+      "en": {
+        "question": "How do we protect animal welfare and biodiversity?",
+        "answer": "<p>We are deeply committed to protecting animals and biodiversity. We have banned all practices harmful to animals, such as force-feeding and live plucking, and we do not use fur or angora in our collections.</p><p>Since 2009, we have invested in the preservation of endangered species to help protect biodiversity.</p>"
       }
     }
   },
@@ -81,11 +171,11 @@
     "translations": {
       "fr": {
         "question": "Comment créer un compte client ?",
-        "answer": "<p>Pour créer un compte, cliquez sur <strong>\"Mon compte\"</strong> en haut à droite de la page, puis sur <strong>\"Créer un compte\"</strong>. Renseignez vos informations personnelles et validez. Vous recevrez un e-mail de confirmation.</p>"
+        "answer": "<p>Cliquez sur <strong>\"Mon compte\"</strong> en haut à droite, puis sur <strong>\"Créer un compte\"</strong>. Renseignez votre prénom, nom, adresse email et mot de passe. Vous recevrez un email de confirmation pour activer votre espace.</p>"
       },
       "en": {
         "question": "How do I create a customer account?",
-        "answer": "<p>To create an account, click on <strong>\"My Account\"</strong> at the top right of the page, then click <strong>\"Create an account\"</strong>. Fill in your personal details and confirm. You will receive a confirmation email.</p>"
+        "answer": "<p>Click on <strong>\"My Account\"</strong> at the top right, then click <strong>\"Create an account\"</strong>. Enter your first name, last name, email address and password. You will receive a confirmation email to activate your account.</p>"
       }
     }
   },
@@ -95,12 +185,57 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "J'ai oublié mon mot de passe, que faire ?",
-        "answer": "<p>Sur la page de connexion, cliquez sur <strong>\"Mot de passe oublié ?\"</strong> et saisissez votre adresse e-mail. Vous recevrez un lien de réinitialisation valable <strong>24 heures</strong>.</p>"
+        "question": "Comment résoudre un problème de connexion à mon compte ?",
+        "answer": "<p>Si vous avez oublié votre mot de passe, cliquez sur <strong>\"Mot de passe oublié\"</strong> pour en générer un nouveau. Si le problème persiste, notre Service Client est à votre disposition pour vous aider à accéder rapidement à votre espace.</p>"
       },
       "en": {
-        "question": "I forgot my password, what should I do?",
-        "answer": "<p>On the login page, click <strong>\"Forgot your password?\"</strong> and enter your email address. You will receive a reset link valid for <strong>24 hours</strong>.</p>"
+        "question": "How do I resolve a login issue with my account?",
+        "answer": "<p>If you have forgotten your password, click on <strong>\"Forgot password\"</strong> to generate a new one. If the issue persists, our Customer Service team is available to help you access your account quickly.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 2,
+    "position": 2,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Comment modifier mes informations personnelles ?",
+        "answer": "<p>Connectez-vous à votre compte, puis rendez-vous dans la rubrique <strong>\"Mes informations\"</strong>. Vous pouvez y modifier votre nom, prénom, adresse email, numéro de téléphone et mot de passe. N'oubliez pas de sauvegarder vos modifications avant de quitter la page.</p>"
+      },
+      "en": {
+        "question": "How do I update my personal information?",
+        "answer": "<p>Log in to your account, then go to the <strong>\"My Information\"</strong> section. You can update your name, surname, email address, phone number and password there. Don't forget to save your changes before leaving the page.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 2,
+    "position": 3,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Comment gérer mes préférences de communication ?",
+        "answer": "<p>Depuis votre espace client, rubrique <strong>\"Mes préférences\"</strong>, vous pouvez gérer vos abonnements aux newsletters et communications marketing. Vous pouvez vous désabonner à tout moment en un seul clic, ou via le lien de désabonnement en bas de chaque email.</p>"
+      },
+      "en": {
+        "question": "How do I manage my communication preferences?",
+        "answer": "<p>From your customer area, in the <strong>\"My Preferences\"</strong> section, you can manage your newsletter and marketing communication subscriptions. You can unsubscribe at any time with a single click, or via the unsubscribe link at the bottom of each email.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 2,
+    "position": 4,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Comment mes données personnelles sont-elles protégées ?",
+        "answer": "<p>Vos données sont <strong>confidentielles</strong> et utilisées uniquement pour améliorer votre expérience. Elles ne sont jamais partagées sans votre accord.</p><p>Vous pouvez à tout moment exercer vos droits d'accès, de modification et de suppression en contactant notre Service Client.</p>"
+      },
+      "en": {
+        "question": "How is my personal data protected?",
+        "answer": "<p>Your data is <strong>confidential</strong> and used solely to improve your experience. It is never shared without your consent.</p><p>You can exercise your rights of access, modification and deletion at any time by contacting our Customer Service.</p>"
       }
     }
   },
@@ -110,12 +245,12 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "Quel est le délai pour effectuer un retour ?",
-        "answer": "<p>Vous disposez de <strong>30 jours</strong> à compter de la réception de votre commande pour effectuer un retour. Les articles doivent être dans leur état d'origine, non utilisés et dans leur emballage d'origine.</p>"
+        "question": "Quelles sont les conditions pour qu'un article soit éligible au retour ?",
+        "answer": "<p>Pour être accepté, un article retourné doit :</p><ul><li>Être <strong>neuf, non porté, non lavé et non abîmé</strong></li><li>Se trouver dans son <strong>emballage d'origine</strong> avec toutes les étiquettes intactes</li><li>Être retourné dans un délai de <strong>30 jours</strong> après réception (60 jours pour les membres fidélité)</li></ul><p>Ne sont pas éligibles : les articles personnalisés et les sous-vêtements (à l'exception des brassières).</p>"
       },
       "en": {
-        "question": "What is the return period?",
-        "answer": "<p>You have <strong>30 days</strong> from the date of receipt to return your order. Items must be in their original condition, unused, and in their original packaging.</p>"
+        "question": "What are the conditions for an item to be eligible for return?",
+        "answer": "<p>To be accepted, a returned item must:</p><ul><li>Be <strong>new, unworn, unwashed and undamaged</strong></li><li>Be in its <strong>original packaging</strong> with all labels intact</li><li>Be returned within <strong>30 days</strong> of receipt (60 days for loyalty members)</li></ul><p>Not eligible: personalised items and underwear (except bralettes).</p>"
       }
     }
   },
@@ -125,12 +260,57 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "Comment suivre le statut de mon remboursement ?",
-        "answer": "<p>Une fois votre retour reçu et validé, le remboursement est effectué sous <strong>5 à 7 jours ouvrés</strong> sur votre moyen de paiement d'origine. Vous recevrez un e-mail de confirmation à chaque étape.</p>"
+        "question": "Quelle est la politique d'échange ?",
+        "answer": "<p>Nous vous offrons la possibilité d'un <strong>échange unique par article</strong>, pour une autre taille du même produit, de la même couleur.</p><ul><li>Votre nouvelle commande sera expédiée dans les <strong>72h</strong> suivant la réception des articles retournés.</li><li>Si le produit souhaité n'est plus disponible, un remboursement sera automatiquement effectué.</li><li>Si votre colis d'échange nous parvient après 14 jours, la demande sera traitée comme un retour.</li></ul>"
       },
       "en": {
-        "question": "How do I track my refund status?",
-        "answer": "<p>Once your return is received and validated, the refund is processed within <strong>5 to 7 business days</strong> to your original payment method. You will receive a confirmation email at each step.</p>"
+        "question": "What is the exchange policy?",
+        "answer": "<p>We offer a <strong>one-time exchange per item</strong>, for a different size of the same product in the same colour.</p><ul><li>Your new order will be shipped within <strong>72 hours</strong> of receiving the returned items.</li><li>If the desired product is no longer available, a refund will be automatically processed.</li><li>If your exchange parcel reaches us after 14 days, the request will be treated as a return.</li></ul>"
+      }
+    }
+  },
+  {
+    "category_index": 3,
+    "position": 2,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Quels sont les délais et modalités de remboursement ?",
+        "answer": "<p><strong>Pour un retour en boutique :</strong> remboursement sous <strong>72h</strong> sur le mode de paiement initial.</p><p><strong>Pour un retour en ligne :</strong> remboursement sous <strong>10 à 15 jours ouvrés</strong> après dépôt du colis en bureau de poste.</p><p>Aucun remboursement en liquide, sauf disposition légale.</p>"
+      },
+      "en": {
+        "question": "What are the refund timelines and conditions?",
+        "answer": "<p><strong>For in-store returns:</strong> refund within <strong>72 hours</strong> to the original payment method.</p><p><strong>For online returns:</strong> refund within <strong>10 to 15 business days</strong> after dropping off the parcel at the post office.</p><p>No cash refunds, except where required by law.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 3,
+    "position": 3,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Puis-je annuler ou modifier ma demande d'échange ?",
+        "answer": "<p>Il est possible d'annuler ou de modifier votre demande d'échange <strong>tant que votre colis n'a pas été déposé en bureau de poste</strong>. Contactez notre Service Client qui procédera à l'annulation.</p>"
+      },
+      "en": {
+        "question": "Can I cancel or modify my exchange request?",
+        "answer": "<p>You can cancel or modify your exchange request <strong>as long as your parcel has not been dropped off at the post office</strong>. Contact our Customer Service who will process the cancellation.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 3,
+    "position": 4,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Mon retour ou échange a-t-il un impact sur les avantages de mon programme fidélité ?",
+        "answer": "<p>En cas de retour ou d'échange, les points de fidélité associés à l'achat initial sont ajustés en conséquence. Les points liés aux articles retournés sont annulés, tandis que ceux correspondant aux articles conservés ou échangés restent actifs sur votre compte.</p>"
+      },
+      "en": {
+        "question": "Does a return or exchange affect my loyalty programme benefits?",
+        "answer": "<p>In the event of a return or exchange, the loyalty points associated with the original purchase are adjusted accordingly. Points linked to returned items are cancelled, while those corresponding to kept or exchanged items remain active on your account.</p>"
       }
     }
   },
@@ -140,12 +320,12 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "Quels sont les délais de livraison ?",
-        "answer": "<p>Les délais de livraison varient selon le mode choisi :</p><ul><li><strong>Standard :</strong> 3 à 5 jours ouvrés</li><li><strong>Express :</strong> 1 à 2 jours ouvrés</li><li><strong>Point relais :</strong> 2 à 4 jours ouvrés</li></ul>"
+        "question": "Quels sont les délais et modes de livraison disponibles ?",
+        "answer": "<p>Nous proposons plusieurs modes de livraison :</p><ul><li><strong>Livraison standard (Colissimo) :</strong> 3 à 5 jours ouvrés</li><li><strong>Livraison express (Chronopost) :</strong> 1 à 2 jours ouvrés</li><li><strong>Point relais :</strong> 2 à 4 jours ouvrés</li><li><strong>Retrait en boutique :</strong> 24 à 48h selon disponibilité des stocks</li></ul>"
       },
       "en": {
-        "question": "What are the delivery times?",
-        "answer": "<p>Delivery times vary depending on the chosen method:</p><ul><li><strong>Standard:</strong> 3 to 5 business days</li><li><strong>Express:</strong> 1 to 2 business days</li><li><strong>Pickup point:</strong> 2 to 4 business days</li></ul>"
+        "question": "What are the available delivery times and methods?",
+        "answer": "<p>We offer several delivery methods:</p><ul><li><strong>Standard delivery (Colissimo):</strong> 3 to 5 business days</li><li><strong>Express delivery (Chronopost):</strong> 1 to 2 business days</li><li><strong>Pickup point:</strong> 2 to 4 business days</li><li><strong>In-store collection:</strong> 24 to 48 hours depending on stock availability</li></ul>"
       }
     }
   },
@@ -156,11 +336,56 @@
     "translations": {
       "fr": {
         "question": "La livraison est-elle gratuite ?",
-        "answer": "<p>La livraison est <strong>offerte pour toute commande supérieure à 50€</strong>. En dessous de ce montant, les frais de livraison sont calculés en fonction du poids de votre commande et du mode de livraison choisi.</p>"
+        "answer": "<p>La livraison est <strong>offerte pour toute commande supérieure à 80€</strong>. En dessous de ce montant :</p><ul><li>Livraison standard : 4,90€</li><li>Livraison express : 9,90€</li><li>Point relais : 3,90€</li></ul><p>Les frais de livraison sont offerts pour les membres de notre programme fidélité, quel que soit le montant de la commande.</p>"
       },
       "en": {
         "question": "Is delivery free?",
-        "answer": "<p>Delivery is <strong>free for all orders over €50</strong>. Below this amount, shipping costs are calculated based on the weight of your order and the chosen delivery method.</p>"
+        "answer": "<p>Delivery is <strong>free for all orders over €80</strong>. Below this amount:</p><ul><li>Standard delivery: €4.90</li><li>Express delivery: €9.90</li><li>Pickup point: €3.90</li></ul><p>Delivery is free for loyalty programme members regardless of the order amount.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 4,
+    "position": 2,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Comment suivre l'avancement de ma commande ?",
+        "answer": "<p>Une fois votre commande expédiée, vous recevez un <strong>email contenant votre numéro de suivi</strong>. Ce lien devient actif dès que le transporteur prend en charge votre colis.</p><p>Vous pouvez également suivre votre commande depuis votre compte : <em>Mon compte &gt; Mes commandes &gt; Voir le détail &gt; Suivre mon colis</em>.</p>"
+      },
+      "en": {
+        "question": "How do I track my order?",
+        "answer": "<p>Once your order has been shipped, you will receive an <strong>email with your tracking number</strong>. The tracking link becomes active as soon as the carrier picks up your parcel.</p><p>You can also track your order from your account: <em>My Account &gt; My Orders &gt; View Details &gt; Track My Parcel</em>.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 4,
+    "position": 3,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Puis-je modifier l'adresse de livraison après validation de ma commande ?",
+        "answer": "<p>Une modification d'adresse est possible <strong>dans les 2 heures suivant la validation de votre commande</strong>, avant qu'elle ne soit transmise à notre entrepôt. Passé ce délai, il ne nous est plus possible d'intervenir. Vérifiez attentivement votre adresse avant de valider.</p>"
+      },
+      "en": {
+        "question": "Can I change the delivery address after placing my order?",
+        "answer": "<p>An address change is possible <strong>within 2 hours of placing your order</strong>, before it is sent to our warehouse. After this time, we are no longer able to make changes. We recommend checking your address carefully before confirming.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 4,
+    "position": 4,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Que se passe-t-il si je suis absent(e) lors de la livraison ?",
+        "answer": "<p>Selon le mode de livraison choisi :</p><ul><li><strong>Retrait en boutique :</strong> 15 jours pour récupérer votre colis, puis retour à notre entrepôt.</li><li><strong>Colissimo :</strong> après deux tentatives, le colis est disponible en bureau de poste pendant 10 jours.</li><li><strong>Point relais :</strong> votre colis reste disponible 15 jours.</li><li><strong>Chronopost :</strong> votre colis est déposé dans le point relais le plus proche de votre domicile.</li></ul>"
+      },
+      "en": {
+        "question": "What happens if I am absent during delivery?",
+        "answer": "<p>Depending on the delivery method chosen:</p><ul><li><strong>In-store collection:</strong> 15 days to collect your parcel, then returned to our warehouse.</li><li><strong>Colissimo:</strong> after two attempts, the parcel is held at your local post office for 10 days.</li><li><strong>Pickup point:</strong> your parcel is held for 15 days.</li><li><strong>Chronopost:</strong> your parcel is left at the nearest pickup point to your home.</li></ul>"
       }
     }
   },
@@ -170,12 +395,12 @@
     "active": true,
     "translations": {
       "fr": {
-        "question": "Quels moyens de paiement acceptez-vous ?",
-        "answer": "<p>Nous acceptons les moyens de paiement suivants :</p><ul><li>Carte bancaire (Visa, Mastercard, American Express)</li><li>PayPal</li><li>Virement bancaire</li><li>Chèque cadeau</li></ul>"
+        "question": "Comment passer une commande sur le site ?",
+        "answer": "<p>Naviguez sur notre site, sélectionnez vos articles, puis cliquez sur <strong>«&nbsp;Ajouter au panier&nbsp;»</strong>. Suivez ensuite les étapes jusqu'au paiement. Dès validation, vous recevrez un email de confirmation récapitulant vos achats.</p><p>⚠️ Les articles sont conservés 30 jours dans votre panier mais <strong>ne sont pas réservés</strong> : si un autre client valide avant vous, le produit peut devenir indisponible.</p>"
       },
       "en": {
-        "question": "What payment methods do you accept?",
-        "answer": "<p>We accept the following payment methods:</p><ul><li>Credit/debit card (Visa, Mastercard, American Express)</li><li>PayPal</li><li>Bank transfer</li><li>Gift card</li></ul>"
+        "question": "How do I place an order on the website?",
+        "answer": "<p>Browse our website, select your items, then click <strong>\"Add to cart\"</strong>. Follow the steps through to payment. Upon confirmation, you will receive a summary email of your purchases.</p><p>⚠️ Items are kept in your cart for 30 days but are <strong>not reserved</strong>: if another customer checks out before you, the product may become unavailable.</p>"
       }
     }
   },
@@ -185,12 +410,57 @@
     "active": true,
     "translations": {
       "fr": {
+        "question": "Quels moyens de paiement acceptez-vous ?",
+        "answer": "<p>Nous acceptons les moyens de paiement suivants :</p><ul><li>Carte bancaire (Visa, Mastercard, American Express)</li><li>PayPal</li><li>Carte cadeau</li><li>Virement bancaire</li><li>Paiement en 3 ou 4 fois sans frais (sous conditions)</li></ul>"
+      },
+      "en": {
+        "question": "What payment methods do you accept?",
+        "answer": "<p>We accept the following payment methods:</p><ul><li>Credit/debit card (Visa, Mastercard, American Express)</li><li>PayPal</li><li>Gift card</li><li>Bank transfer</li><li>Pay in 3 or 4 instalments interest-free (subject to conditions)</li></ul>"
+      }
+    }
+  },
+  {
+    "category_index": 5,
+    "position": 2,
+    "active": true,
+    "translations": {
+      "fr": {
         "question": "Mes informations de paiement sont-elles sécurisées ?",
-        "answer": "<p>Oui, toutes vos transactions sont <strong>100% sécurisées</strong>. Notre site utilise le protocole <strong>SSL (HTTPS)</strong> et les paiements par carte sont traités via des plateformes certifiées <strong>PCI DSS</strong>. Nous ne stockons aucune information bancaire.</p>"
+        "answer": "<p>Oui, toutes vos transactions sont <strong>100% sécurisées</strong>. Notre site utilise le protocole <strong>SSL (HTTPS)</strong> et les paiements par carte sont traités via des plateformes certifiées <strong>PCI DSS</strong>. Nous ne stockons aucune information bancaire sur nos serveurs.</p>"
       },
       "en": {
         "question": "Is my payment information secure?",
-        "answer": "<p>Yes, all your transactions are <strong>100% secure</strong>. Our website uses <strong>SSL (HTTPS)</strong> encryption and card payments are processed through <strong>PCI DSS</strong> certified platforms. We do not store any banking information.</p>"
+        "answer": "<p>Yes, all your transactions are <strong>100% secure</strong>. Our website uses <strong>SSL (HTTPS)</strong> encryption and card payments are processed through <strong>PCI DSS</strong> certified platforms. We do not store any banking information on our servers.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 5,
+    "position": 3,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Quand suis-je débité(e) après avoir passé commande ?",
+        "answer": "<p>Votre compte bancaire est <strong>débité au moment de l'expédition</strong>. Lors de la validation, seule une autorisation de paiement est enregistrée. En cas d'annulation avant expédition, aucun débit ne sera effectué.</p>"
+      },
+      "en": {
+        "question": "When am I charged after placing an order?",
+        "answer": "<p>Your bank account is <strong>charged at the time of shipment</strong>. When your order is confirmed, only a payment authorisation is recorded. If the order is cancelled before shipment, no charge will be made.</p>"
+      }
+    }
+  },
+  {
+    "category_index": 5,
+    "position": 4,
+    "active": true,
+    "translations": {
+      "fr": {
+        "question": "Puis-je utiliser plusieurs codes promotionnels sur une même commande ?",
+        "answer": "<p>Un seul code promotionnel peut être appliqué par commande. Il est en revanche possible de cumuler un code promo avec une carte cadeau. La valeur du code est répartie proportionnellement entre les articles — aucun remboursement partiel ne pourra être accordé en cas de retour.</p>"
+      },
+      "en": {
+        "question": "Can I use multiple promotional codes on the same order?",
+        "answer": "<p>Only one promotional code can be applied per order. However, it is possible to combine a promo code with a gift card. The value of the code is distributed proportionally across the items — no partial refund can be granted in the event of a return.</p>"
       }
     }
   }
