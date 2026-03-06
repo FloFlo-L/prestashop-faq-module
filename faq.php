@@ -45,8 +45,8 @@ class Faq extends Module
             $this->removeStaleTabs() &&
             $this->installTables() &&
             parent::install() &&
-            $this->installTabs()
-        ;
+            $this->installTabs() &&
+            $this->registerHook('moduleRoutes');
     }
 
     public function uninstall()
@@ -54,8 +54,8 @@ class Faq extends Module
         return
             $this->removeStaleTabs() &&
             $this->removeTables() &&
-            parent::uninstall()
-        ;
+            $this->unregisterHook('moduleRoutes') &&
+            parent::uninstall();
     }
 
     private function installTabs(): bool
@@ -113,6 +113,21 @@ class Faq extends Module
         }
 
         return true;
+    }
+
+    public function hookModuleRoutes(): array
+    {
+        return [
+            'module-faq-faq' => [
+                'controller' => 'faq',
+                'rule' => 'faq',
+                'keywords' => [],
+                'params' => [
+                    'fc' => 'module',
+                    'module' => 'faq',
+                ],
+            ],
+        ];
     }
 
     public function getContent(): void
