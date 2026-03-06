@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Composer dependencies (production)
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Build zip
+        run: |
+          MODULE_NAME="faq"
+          ZIP_NAME="${MODULE_NAME}-${{ github.ref_name }}.zip"
+          mkdir -p /tmp/build/${MODULE_NAME}
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='tests' \
+            --exclude='composer.lock' \
+            . /tmp/build/${MODULE_NAME}/
+          cd /tmp/build
+          zip -r "${GITHUB_WORKSPACE}/${ZIP_NAME}" ${MODULE_NAME}/
+          echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.ZIP_NAME }}
+          generate_release_notes: true
