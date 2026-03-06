@@ -129,6 +129,7 @@ class FaqQuestionController extends PrestaShopAdminController
             'formAction' => $this->generateUrl('faq_question_edit_process', ['faqId' => $faqId]),
             'layoutTitle' => $this->trans('Edit question', [], 'Modules.Faq.Admin'),
             'layoutHeaderToolbarBtn' => $this->getFormToolbarButtons(),
+            'entityId' => $faqId,
         ]);
     }
 
@@ -165,6 +166,7 @@ class FaqQuestionController extends PrestaShopAdminController
             'formAction' => $this->generateUrl('faq_question_edit_process', ['faqId' => $faqId]),
             'layoutTitle' => $this->trans('Edit question', [], 'Modules.Faq.Admin'),
             'layoutHeaderToolbarBtn' => $this->getFormToolbarButtons(),
+            'entityId' => $faqId,
         ]);
     }
 

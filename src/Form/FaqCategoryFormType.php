@@ -31,7 +31,7 @@ class FaqCategoryFormType extends TranslatorAwareType
                 'attr' => ['maxlength' => 255],
             ])
             ->add('active', SwitchType::class, [
-                'label' => $this->trans('Active', 'Admin.Global'),
+                'label' => $this->trans('Enabled', 'Admin.Global'),
                 'required' => false,
             ]);
     }

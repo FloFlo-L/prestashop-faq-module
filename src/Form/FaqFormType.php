@@ -50,7 +50,7 @@ class FaqFormType extends TranslatorAwareType
                 'required' => false,
             ])
             ->add('active', SwitchType::class, [
-                'label' => $this->trans('Active', 'Admin.Global'),
+                'label' => $this->trans('Enabled', 'Admin.Global'),
                 'required' => false,
             ]);
     }

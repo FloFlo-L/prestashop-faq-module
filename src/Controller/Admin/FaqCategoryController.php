@@ -108,6 +108,7 @@ class FaqCategoryController extends PrestaShopAdminController
             'formAction' => $this->generateUrl('faq_category_edit_process', ['faqCategoryId' => $faqCategoryId]),
             'layoutTitle' => $this->trans('Edit category', [], 'Modules.Faq.Admin'),
             'layoutHeaderToolbarBtn' => $this->getFormToolbarButtons(),
+            'entityId' => $faqCategoryId,
         ]);
     }
 
@@ -144,6 +145,7 @@ class FaqCategoryController extends PrestaShopAdminController
             'formAction' => $this->generateUrl('faq_category_edit_process', ['faqCategoryId' => $faqCategoryId]),
             'layoutTitle' => $this->trans('Edit category', [], 'Modules.Faq.Admin'),
             'layoutHeaderToolbarBtn' => $this->getFormToolbarButtons(),
+            'entityId' => $faqCategoryId,
         ]);
     }
 
