@@ -8,7 +8,13 @@ FAQ (Frequently Asked Questions) management module for PrestaShop > 8.0.0
 
 ## 🚀 Installation
 
-### 1. Clone the repository
+### Option A — Download the zip
+
+1. Download the latest `faq-vX.X.X.zip` from the [Releases page](https://github.com/FloFlo-L/prestashop-faq-module/releases).
+2. In your PrestaShop back office, go to **Modules > Module Manager** and click **Upload a module**.
+3. Drop the zip file and click **Install**.
+
+### Option B — Clone the repository
 
 Clone the repository into the `modules` folder of your PrestaShop store:
 
